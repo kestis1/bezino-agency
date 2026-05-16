@@ -9,10 +9,10 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 
-const TALENTFLOW = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-talentflow-BzKnMfAs6GKwKKAbp46oDn.webp";
-const NOIR_CAFE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-noir-cafe-UzeveLErntenSXZgVSy3Md.webp";
-const HORIZON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-horizon-F6EnqvaxQnEojvpzqKfdMH.webp";
-const LEDGERAI = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-ledgerai-cnbXpciumP9JmEoWmNx3tk.webp";
+const TALENTFLOW = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-talentflow-mockup-WK5yYZjiqSfiJNShDnLx2f.webp";
+const NOIR_CAFE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-noir-cafe-mockup-gqDT4MxF62MgQoUPaDsVmH.webp";
+const HORIZON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-horizon-mockup-iXweyULbZkt2pvT6QbrqJj.webp";
+const LEDGERAI = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-ledgerai-mockup-UwDEbCBVGMs6skhL6xswu6.webp";
 
 const projects = [
   {
@@ -69,10 +69,10 @@ export default function Work() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="work" className="py-28 bg-[oklch(0.07_0.004_264)]">
+    <section id="work" className="py-20 bg-[oklch(0.07_0.004_264)]">
       <div className="container">
         {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
             <span className="section-label block mb-4">Selected Work</span>
             <h2
@@ -115,12 +115,15 @@ export default function Work() {
               {/* Main content */}
               <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
                 {/* Image — mobile shows above, desktop shows on hover */}
-                <div className="md:hidden w-full aspect-video rounded-sm overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="md:hidden w-full aspect-video rounded-lg overflow-hidden border border-white/[0.08]">
+                  <div className="relative w-full h-full">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10" />
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
 
                 <div className="flex-1">
@@ -155,14 +158,19 @@ export default function Work() {
 
               {/* Floating image on hover — desktop only */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.92, y: 10 }}
                 animate={{
                   opacity: hoveredId === project.id ? 1 : 0,
-                  scale: hoveredId === project.id ? 1 : 0.95,
+                  scale: hoveredId === project.id ? 1 : 0.92,
+                  y: hoveredId === project.id ? 0 : 10,
                 }}
-                transition={{ duration: 0.25, ease: "easeOut" as const }}
-                className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 w-72 aspect-video rounded-sm overflow-hidden border border-white/[0.08] shadow-2xl z-10 pointer-events-none"
+                transition={{ duration: 0.3, ease: "easeOut" as const }}
+                className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 w-80 aspect-video rounded-lg overflow-hidden border border-white/[0.1] shadow-2xl z-10 pointer-events-none"
               >
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
+                {/* Glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 rounded-lg blur-xl" />
                 <img
                   src={project.image}
                   alt={project.name}

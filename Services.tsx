@@ -65,27 +65,27 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.23, 1, 0.32, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
 export default function Services() {
   return (
-    <section id="services" className="py-28 bg-[oklch(0.09_0.005_264)]">
+    <section id="services" className="py-20 bg-[oklch(0.09_0.005_264)]">
       <div className="container">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-12">
           <span className="section-label block mb-4">What We Do</span>
-          <h2
-            className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-tight mb-5"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
-          >
-            Services Built for
-            <br />
-            <span className="gradient-text">Ambitious Teams</span>
-          </h2>
-          <p className="text-[oklch(0.50_0.010_264)] text-base leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            We specialize in the intersection of design craft and engineering precision. Every engagement is tailored — no templates, no shortcuts.
-          </p>
+            <h2
+              className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-tight mb-5"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+            >
+              Premium Services
+              <br />
+              <span className="gradient-text">Built for Results</span>
+            </h2>
+            <p className="text-[oklch(0.50_0.010_264)] text-base leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              We combine strategic design with production-ready development. Every project is custom-built to drive conversions and scale.
+            </p>
         </div>
 
         {/* Services grid */}
@@ -102,7 +102,8 @@ export default function Services() {
               <motion.div
                 key={service.number}
                 variants={cardVariants}
-                className="group bg-[oklch(0.09_0.005_264)] p-8 hover:bg-[oklch(0.11_0.006_264)] transition-colors duration-300 relative"
+                whileHover={{ y: -4 }}
+                className="group bg-[oklch(0.09_0.005_264)] p-8 hover:bg-[oklch(0.11_0.006_264)] transition-colors duration-300 relative cursor-pointer"
               >
                 {/* Number */}
                 <span className="font-mono-label text-[0.65rem] text-[oklch(0.25_0.005_264)] group-hover:text-cyan/50 transition-colors duration-200 block mb-6">
@@ -110,9 +111,12 @@ export default function Services() {
                 </span>
 
                 {/* Icon */}
-                <div className="w-10 h-10 rounded-sm border border-white/[0.08] flex items-center justify-center mb-5 group-hover:border-cyan/30 group-hover:bg-cyan/5 transition-all duration-300">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 rounded-sm border border-white/[0.08] flex items-center justify-center mb-5 group-hover:border-cyan/30 group-hover:bg-cyan/5 transition-all duration-300"
+                >
                   <Icon size={18} className="text-[oklch(0.50_0.010_264)] group-hover:text-cyan transition-colors duration-200" />
-                </div>
+                </motion.div>
 
                 {/* Title */}
                 <h3 className="font-display font-700 text-lg text-[oklch(0.94_0.003_264)] mb-3 group-hover:text-cyan transition-colors duration-200">

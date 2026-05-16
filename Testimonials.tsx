@@ -52,10 +52,10 @@ const cardVariants = {
 
 export default function Testimonials() {
   return (
-    <section className="py-28 bg-[oklch(0.09_0.005_264)]">
+    <section className="py-20 bg-[oklch(0.09_0.005_264)]">
       <div className="container">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-12">
           <span className="section-label block mb-4">Feedback</span>
           <h2
             className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-tight"

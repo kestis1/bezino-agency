@@ -1,0 +1,152 @@
+Project polish + premium upgrade pass for the Bezino agency website.
+
+Current state:
+
+* Dark premium SaaS agency vibe is good
+* Typography/layout already strong
+* Site feels credible and modern
+* Main issue now is lack of visual depth and portfolio realism
+
+Main goals:
+Make the website feel less like a clean template and more like a real high-end agency site.
+
+PRIORITY TASKS:
+
+1. PORTFOLIO VISUAL UPGRADE (highest priority)
+   Current portfolio section is too text-heavy.
+
+Add:
+
+* Large preview visuals/mockups for each project
+* SaaS dashboard mockup
+* Café brand landing page preview
+* Travel platform preview
+* Finance analytics/dashboard preview
+* Browser-frame or device-frame presentation
+* Subtle hover interactions
+* Premium image treatment (dark overlays, gradients, glow)
+
+Goal:
+Portfolio should instantly communicate “premium agency work” visually, not just through text.
+
+2. HERO SECTION IMPROVEMENT
+   Current hero background is too weak.
+
+Improve with:
+
+* Stronger radial gradients
+* Cyan glow behind headline
+* More visible grid/background depth
+* Subtle animated particles/noise
+* Slight motion/parallax
+* Better contrast separation
+
+Goal:
+Hero should feel cinematic and expensive immediately.
+
+3. REDUCE EXCESSIVE EMPTY SPACE
+   Several sections are too tall and feel unfinished.
+
+Reduce vertical spacing/padding especially in:
+
+* Services
+* Process
+* Portfolio bottom
+* Testimonials
+* FAQ ending
+
+Desktop spacing should feel tighter and more intentional.
+
+4. ADD MOTION / INTERACTIONS
+   Site currently feels too static.
+
+Add subtle Framer Motion animations:
+
+* Fade-up reveals
+* Staggered section entrances
+* Hover lift on cards/buttons
+* Smooth transitions
+* Slight scale on portfolio cards
+* CTA hover glow/translate
+
+Keep animations premium and subtle.
+Avoid over-animation.
+
+5. NAVBAR POLISH
+   Current navbar feels too sterile/simple.
+
+Improve:
+
+* Better hover states
+* Animated underline
+* Slight blur/backdrop
+* Refined spacing
+* Smoother transitions
+* More premium button interaction
+
+6. CTA BUTTON POLISH
+   Buttons need more depth.
+
+Add:
+
+* Hover glow
+* Slight lift
+* Transition smoothing
+* Better hover contrast
+* Premium interaction feel
+
+7. ADD SOCIAL PROOF STRIP
+   Under hero section add:
+
+* grayscale startup/company logos
+* subtle “Trusted by startups and SaaS teams” style copy
+* minimal premium presentation
+
+8. COPY POLISH
+   Some copy is still generic.
+
+Replace generic agency phrases with sharper positioning.
+
+Examples:
+Instead of:
+“Production-ready development”
+
+Use stronger positioning like:
+“Built to scale, not just launch.”
+or
+“Fast sites engineered for conversion.”
+
+Goal:
+More confident and premium tone.
+Less template-like wording.
+
+9. OVERALL DIRECTION
+   Keep:
+
+* dark minimal aesthetic
+* cyan accent color
+* premium SaaS positioning
+* clean typography
+
+Avoid:
+
+* cheesy startup buzzwords
+* fake hype
+* over-animation
+* AI-generated feeling
+* excessive gradients everywhere
+
+Target feeling:
+Modern premium digital agency similar to:
+
+* Linear
+* Framer
+* Raycast
+* high-end Webflow agencies
+* modern SaaS studios
+
+Current site quality:
+~7.5/10
+
+Target after polish:
+9/10 premium agency presentation.

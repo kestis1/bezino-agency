@@ -38,10 +38,17 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${HERO_BG})` }}
       />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.07_0.004_264/0.97)] via-[oklch(0.07_0.004_264/0.88)] to-[oklch(0.07_0.004_264/0.75)]" />
+      {/* Radial gradient glow behind headline */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/[0.08] rounded-full blur-3xl" />
+      {/* Dark overlay with stronger gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.07_0.004_264/0.98)] via-[oklch(0.07_0.004_264/0.92)] to-[oklch(0.07_0.004_264/0.85)]" />
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[oklch(0.07_0.004_264)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[oklch(0.07_0.004_264)] via-[oklch(0.07_0.004_264/0.5)] to-transparent" />
+      {/* Animated grid overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(0, 229, 255, 0.05) 25%, rgba(0, 229, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 229, 255, 0.05) 75%, rgba(0, 229, 255, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 229, 255, 0.05) 25%, rgba(0, 229, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 229, 255, 0.05) 75%, rgba(0, 229, 255, 0.05) 76%, transparent 77%, transparent)',
+        backgroundSize: '50px 50px'
+      }} />
 
       {/* Content */}
       <div className="relative z-10 container pt-16 pb-16">
@@ -59,15 +66,17 @@ export default function Hero() {
             <span className="section-label opacity-60">Est. 2021</span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline with glow */}
           <motion.h1
             custom={1}
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-[1.0] tracking-tight mb-6"
+            className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-[1.0] tracking-tight mb-6 relative"
             style={{ fontSize: "clamp(2.75rem, 7vw, 6rem)" }}
           >
+            {/* Glow effect behind text */}
+            <span className="absolute -inset-4 bg-gradient-to-r from-cyan-500/0 via-cyan-500/[0.15] to-cyan-500/0 blur-2xl -z-10" />
             Your Site Should{" "}
             <span className="gradient-text">Earn Its Keep.</span>
           </motion.h1>
@@ -92,22 +101,26 @@ export default function Hero() {
             animate="show"
             className="flex flex-col sm:flex-row gap-4 mb-16"
           >
-            <a
+            <motion.a
               href="#quote"
               onClick={(e) => { e.preventDefault(); handleScroll("#quote"); }}
-              className="btn-primary inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-sm text-sm font-700"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-sm text-sm font-700 transition-all duration-200"
             >
               Book a Discovery Call
               <ArrowRight size={16} />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#work"
               onClick={(e) => { e.preventDefault(); handleScroll("#work"); }}
-              className="btn-outline inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-sm text-sm"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-outline inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-sm text-sm transition-all duration-200"
             >
               <Play size={14} className="fill-current" />
               See Our Work
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Stats */}

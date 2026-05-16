@@ -43,10 +43,10 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-28 bg-[oklch(0.07_0.004_264)]">
+    <section id="process" className="py-20 bg-[oklch(0.07_0.004_264)]">
       <div className="container">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
             <span className="section-label block mb-4">How We Work</span>
             <h2

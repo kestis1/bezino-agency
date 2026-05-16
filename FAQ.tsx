@@ -47,9 +47,9 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-28 bg-[oklch(0.07_0.004_264)]">
+    <section id="faq" className="py-20 bg-[oklch(0.07_0.004_264)]">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12">
           {/* Left: Heading */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}

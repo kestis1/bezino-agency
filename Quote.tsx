@@ -73,9 +73,9 @@ export default function Quote() {
   };
 
   return (
-    <section id="quote" className="py-28 bg-[oklch(0.09_0.005_264)]">
+    <section id="quote" className="py-20 bg-[oklch(0.09_0.005_264)]">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left: Copy */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
