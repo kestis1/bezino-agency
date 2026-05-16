@@ -53,9 +53,9 @@ export default function Process() {
               className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
             >
-              Our
+              From Concept to
               <br />
-              <span className="gradient-text">Process</span>
+              <span className="gradient-text">Launch</span>
             </h2>
           </div>
             <p className="text-[oklch(0.50_0.010_264)] text-sm max-w-xs leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>

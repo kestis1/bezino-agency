@@ -36,7 +36,7 @@ export default function Navbar() {
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" as const }}
+        transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-[oklch(0.07_0.004_264/0.92)] backdrop-blur-xl border-b border-white/[0.06]"
@@ -102,7 +102,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: "easeOut" as const }}
+            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="fixed inset-0 z-40 bg-[oklch(0.07_0.004_264/0.97)] backdrop-blur-xl flex flex-col pt-20 px-6 pb-8"
           >
             <nav className="flex flex-col gap-1">
@@ -111,7 +111,7 @@ export default function Navbar() {
                   key={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06, duration: 0.3, ease: "easeOut" as const }}
+                  transition={{ delay: i * 0.06, duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                   onClick={() => handleNavClick(link.href)}
                   className="font-display font-700 text-3xl text-left text-[oklch(0.94_0.003_264)] py-3 border-b border-white/[0.06] hover:text-cyan transition-colors"
                 >

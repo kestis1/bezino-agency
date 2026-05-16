@@ -81,10 +81,7 @@ export default function Hero() {
             className="text-[oklch(0.60_0.010_264)] text-lg md:text-xl leading-relaxed max-w-2xl mb-10"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            We build high-converting landing pages for startups and SaaS.{" "}
-            <span className="text-[oklch(0.80_0.008_264)]">Clean design.</span>{" "}
-            <span className="text-[oklch(0.80_0.008_264)]">Production-ready code.</span>{" "}
-            Shipped efficiently.
+            Modern websites designed to look premium, load fast, and turn visitors into customers.
           </motion.p>
 
           {/* CTAs */}

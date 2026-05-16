@@ -6,7 +6,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
 
 const TALENTFLOW = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-talentflow-BzKnMfAs6GKwKKAbp46oDn.webp";
 const NOIR_CAFE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663666570549/9ww9FhpDzHYpo7TRELpyEu/bezino-portfolio-noir-cafe-UzeveLErntenSXZgVSy3Md.webp";
@@ -19,7 +20,7 @@ const projects = [
     name: "TalentFlow AI",
     category: "AI Recruiting Platform",
     tags: ["SaaS", "AI", "Dashboard"],
-    description: "A full-featured recruiting platform with AI-powered candidate matching, pipeline management, and real-time analytics.",
+    description: "AI recruiting platform concept for modern hiring teams. Clean dashboard design with candidate matching and pipeline management.",
     image: TALENTFLOW,
     year: "2024",
   },
@@ -28,7 +29,7 @@ const projects = [
     name: "Noir Café",
     category: "Premium Café Brand",
     tags: ["Hospitality", "Brand", "E-commerce"],
-    description: "Dark luxury branding and digital presence for an upscale café chain, including online reservations and menu showcase.",
+    description: "Premium café brand direction with dark luxury styling. Concept for upscale hospitality with online presence and reservations.",
     image: NOIR_CAFE,
     year: "2024",
   },
@@ -37,7 +38,7 @@ const projects = [
     name: "Horizon Trips",
     category: "Travel Agency",
     tags: ["Travel", "Booking", "Editorial"],
-    description: "An editorial-style travel platform with destination discovery, curated itineraries, and seamless booking flows.",
+    description: "Travel agency concept focused on curated destination discovery. Editorial-style platform design with booking integration.",
     image: HORIZON,
     year: "2023",
   },
@@ -46,7 +47,7 @@ const projects = [
     name: "LedgerAI",
     category: "Finance SaaS Dashboard",
     tags: ["FinTech", "SaaS", "Analytics"],
-    description: "Real-time financial analytics dashboard with AI-powered insights, P&L summaries, and cash flow forecasting.",
+    description: "Finance SaaS dashboard concept with clean analytics positioning. Real-time financial data visualization and insights.",
     image: LEDGERAI,
     year: "2023",
   },
@@ -84,7 +85,7 @@ export default function Work() {
             </h2>
           </div>
           <p className="text-[oklch(0.50_0.010_264)] text-sm max-w-xs leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            A curated selection of landing pages and marketing sites we've built for ambitious teams.
+            Sample landing page directions and concept explorations across different industries.
           </p>
         </div>
 
@@ -150,12 +151,7 @@ export default function Work() {
                 </div>
               </div>
 
-              {/* Arrow */}
-              <div className="hidden md:flex items-center">
-                <div className="w-9 h-9 rounded-sm border border-white/[0.08] flex items-center justify-center text-[oklch(0.35_0.006_264)] group-hover:border-cyan/40 group-hover:text-cyan group-hover:bg-cyan/5 transition-all duration-200">
-                  <ArrowUpRight size={16} />
-                </div>
-              </div>
+
 
               {/* Floating image on hover — desktop only */}
               <motion.div
