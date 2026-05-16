@@ -1,8 +1,5 @@
 /*
  * BEZINO CUSTOM QUOTE SECTION
- * Design: Brutalist Precision — full-width dark form with cyan accents
- * Layout: Two-column on desktop (copy + form), single column on mobile
- * Note: No fixed pricing — custom quote only
  */
 
 import { useState } from "react";
@@ -18,8 +15,6 @@ const projectTypes = [
   "Agency / Studio Site",
   "Other",
 ];
-
-// Budget section removed - no pricing discussion in form
 
 const timelines = [
   "Fast turnaround",
@@ -46,6 +41,7 @@ export default function Quote() {
     timeline: "",
     details: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -61,22 +57,57 @@ export default function Quote() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!form.name || !form.email || !form.projectType) {
       toast.error("Please fill in the required fields.");
       return;
     }
+
     setLoading(true);
-    // Simulate form submission
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xykvgerj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          projectType: form.projectType,
+          timeline: form.timeline,
+          details: form.details,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitted(true);
+      toast.success("Project request sent successfully.");
+
+      setForm({
+        name: "",
+        email: "",
+        company: "",
+        projectType: "",
+        timeline: "",
+        details: "",
+      });
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section id="quote" className="py-20 bg-[oklch(0.09_0.005_264)]">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left: Copy */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -85,6 +116,7 @@ export default function Quote() {
             className="flex flex-col justify-center"
           >
             <span className="section-label block mb-4">Get in Touch</span>
+
             <h2
               className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-tight mb-5"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
@@ -93,35 +125,41 @@ export default function Quote() {
               <br />
               <span className="gradient-text">your site.</span>
             </h2>
-            <p className="text-[oklch(0.50_0.010_264)] text-base leading-relaxed mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+
+            <p
+              className="text-[oklch(0.50_0.010_264)] text-base leading-relaxed mb-8"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
               Share your project details and we'll get back to you with next steps.
             </p>
 
-            {/* What's included */}
             <div className="space-y-4">
-              {[
-                "Quick response",
-                "Honest assessment",
-                "Clear next steps",
-                "No pressure",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 size={16} className="text-cyan mt-0.5 flex-shrink-0" />
-                  <span className="text-[oklch(0.60_0.010_264)] text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
+              {["Quick response", "Honest assessment", "Clear next steps", "No pressure"].map(
+                (item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle2 size={16} className="text-cyan mt-0.5 flex-shrink-0" />
+                    <span
+                      className="text-[oklch(0.60_0.010_264)] text-sm"
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {item}
+                    </span>
+                  </div>
+                )
+              )}
             </div>
 
-            {/* Trust signal */}
             <div className="mt-10 pt-8 border-t border-white/[0.06]">
               <p className="font-mono-label text-[0.65rem] text-[oklch(0.35_0.006_264)] tracking-wider uppercase mb-3">
                 Who we work with
               </p>
+
               <div className="flex flex-wrap gap-4">
                 {["Startups", "SaaS Teams", "Founders", "Studios"].map((t) => (
-                  <span key={t} className="font-display font-600 text-sm text-[oklch(0.45_0.008_264)]">
+                  <span
+                    key={t}
+                    className="font-display font-600 text-sm text-[oklch(0.45_0.008_264)]"
+                  >
                     {t}
                   </span>
                 ))}
@@ -129,7 +167,6 @@ export default function Quote() {
             </div>
           </motion.div>
 
-          {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -141,11 +178,16 @@ export default function Quote() {
                 <div className="w-14 h-14 rounded-full bg-cyan/10 border border-cyan/30 flex items-center justify-center mb-5">
                   <CheckCircle2 size={24} className="text-cyan" />
                 </div>
+
                 <h3 className="font-display font-700 text-xl text-[oklch(0.94_0.003_264)] mb-3">
                   Request Received
                 </h3>
-                <p className="text-[oklch(0.50_0.010_264)] text-sm max-w-xs leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  We'll review your project details and send you a custom proposal within 24 hours. Check your inbox.
+
+                <p
+                  className="text-[oklch(0.50_0.010_264)] text-sm max-w-xs leading-relaxed"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  We'll review your project details and get back to you soon. Check your inbox.
                 </p>
               </div>
             ) : (
@@ -153,7 +195,6 @@ export default function Quote() {
                 onSubmit={handleSubmit}
                 className="border border-white/[0.08] rounded-sm bg-[oklch(0.10_0.005_264)] p-8 space-y-6"
               >
-                {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="font-mono-label text-[0.65rem] text-[oklch(0.45_0.008_264)] tracking-wider uppercase block mb-2">
@@ -169,6 +210,7 @@ export default function Quote() {
                       className="input-dark w-full px-4 py-3 rounded-sm text-sm"
                     />
                   </div>
+
                   <div>
                     <label className="font-mono-label text-[0.65rem] text-[oklch(0.45_0.008_264)] tracking-wider uppercase block mb-2">
                       Email *
@@ -185,7 +227,6 @@ export default function Quote() {
                   </div>
                 </div>
 
-                {/* Company */}
                 <div>
                   <label className="font-mono-label text-[0.65rem] text-[oklch(0.45_0.008_264)] tracking-wider uppercase block mb-2">
                     Company / Startup
@@ -200,11 +241,11 @@ export default function Quote() {
                   />
                 </div>
 
-                {/* Project Type */}
                 <div>
                   <label className="font-mono-label text-[0.65rem] text-[oklch(0.45_0.008_264)] tracking-wider uppercase block mb-2">
                     Project Type *
                   </label>
+
                   <div className="flex flex-wrap gap-2">
                     {projectTypes.map((type) => (
                       <button
@@ -223,13 +264,11 @@ export default function Quote() {
                   </div>
                 </div>
 
-
-
-                {/* Timeline */}
                 <div>
                   <label className="font-mono-label text-[0.65rem] text-[oklch(0.45_0.008_264)] tracking-wider uppercase block mb-2">
                     Timeline
                   </label>
+
                   <div className="flex flex-wrap gap-2">
                     {timelines.map((t) => (
                       <button
@@ -248,43 +287,29 @@ export default function Quote() {
                   </div>
                 </div>
 
-                {/* Details */}
                 <div>
                   <label className="font-mono-label text-[0.65rem] text-[oklch(0.45_0.008_264)] tracking-wider uppercase block mb-2">
                     Project Details
                   </label>
+
                   <textarea
                     name="details"
                     value={form.details}
                     onChange={handleChange}
                     rows={4}
-                    placeholder="Tell us about your project, goals, and any specific requirements..."
+                    placeholder="Tell us what you need, what you are launching, and any important details."
                     className="input-dark w-full px-4 py-3 rounded-sm text-sm resize-none"
                   />
                 </div>
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-primary w-full py-3.5 rounded-sm text-sm flex items-center justify-center gap-2.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="btn-primary w-full rounded-sm px-6 py-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {loading ? (
-                    <>
-                      <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send My Request
-                      <ArrowRight size={14} />
-                    </>
-                  )}
+                  {loading ? "Sending..." : "Send My Request"}
+                  {!loading && <ArrowRight size={18} />}
                 </button>
-
-                <p className="text-center text-[oklch(0.35_0.006_264)] text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  We respond within 24 hours. No spam, ever.
-                </p>
               </form>
             )}
           </motion.div>
