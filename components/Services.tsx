@@ -11,50 +11,50 @@ const services = [
   {
     icon: Layers,
     number: "01",
-    title: "Landing Page Design",
+    title: "Landing Pages",
     description:
-      "Conversion-focused landing pages built from scratch. We combine strategic copywriting, visual hierarchy, and psychological triggers to turn visitors into leads.",
-    features: ["Custom UI/UX design", "Copywriting & messaging", "A/B test-ready structure", "Brand alignment"],
-  },
-  {
-    icon: Code2,
-    number: "02",
-    title: "Production-Ready Development",
-    description:
-      "Clean, performant code in Next.js, React, or Webflow. Every site is optimized for Core Web Vitals, SEO, and fast load times out of the box.",
-    features: ["Next.js / React / Webflow", "Core Web Vitals optimized", "SEO-ready markup", "CMS integration"],
+      "Conversion-focused pages for product launches, campaigns, and validation. Built to communicate your offer clearly and move visitors to action.",
+    features: ["Clear visual hierarchy", "Conversion-led layout", "Campaign & launch ready", "Mobile responsive"],
   },
   {
     icon: BarChart3,
-    number: "03",
-    title: "Conversion Rate Optimization",
+    number: "02",
+    title: "Startup Websites",
     description:
-      "We don't just build pretty sites — we build sites that perform. Analytics setup, heatmaps, and iterative improvements based on real user data.",
-    features: ["Analytics & heatmap setup", "Funnel analysis", "Iterative A/B testing", "Conversion audits"],
+      "Clean marketing sites that explain what you do, make the business feel credible, and hold up when people actually look.",
+    features: ["Offer clarity", "Trust-building structure", "Fast and lightweight", "Built to grow with you"],
   },
   {
     icon: Zap,
-    number: "04",
-    title: "SaaS Marketing Sites",
+    number: "03",
+    title: "SaaS & AI Product Sites",
     description:
-      "Full marketing websites for SaaS products — from hero to pricing to docs. Built to communicate value, reduce churn, and accelerate signups.",
-    features: ["Product storytelling", "Pricing page design", "Onboarding flows", "Feature showcases"],
-  },
-  {
-    icon: Smartphone,
-    number: "05",
-    title: "Mobile-First Experiences",
-    description:
-      "Every project is designed mobile-first. Responsive layouts, touch-optimized interactions, and performance tuned for all devices and connection speeds.",
-    features: ["Responsive design", "Touch interactions", "Progressive enhancement", "Cross-browser QA"],
+      "Premium product pages for software, platforms, and AI tools. Designed to communicate value without overpromising.",
+    features: ["Product storytelling", "Feature showcases", "Pricing page design", "Premium visual system"],
   },
   {
     icon: RefreshCw,
-    number: "06",
-    title: "Site Redesigns & Refreshes",
+    number: "04",
+    title: "Website Redesigns",
     description:
-      "Transform underperforming sites into conversion machines. We audit your existing site, identify friction points, and rebuild with purpose.",
-    features: ["UX audit & analysis", "Performance benchmarking", "Phased redesign", "Migration support"],
+      "Modern rebuilds for outdated websites that need better structure, clearer messaging, and a visual system that doesn't look like 2017.",
+    features: ["Structure & UX improvements", "Visual refresh", "Content restructuring", "Performance uplift"],
+  },
+  {
+    icon: Code2,
+    number: "05",
+    title: "Frontend Development",
+    description:
+      "React / Vite implementation with clean, responsive layouts. We build from designs or spec — fast, maintainable, production-ready.",
+    features: ["React / Vite", "Responsive layouts", "Clean, readable code", "Cross-browser tested"],
+  },
+  {
+    icon: Smartphone,
+    number: "06",
+    title: "Launch Support",
+    description:
+      "Contact form setup, basic SEO configuration, performance checks, and deployment polish so you go live without loose ends.",
+    features: ["Contact form integration", "Basic SEO setup", "Performance checks", "Deployment support"],
   },
 ];
 
@@ -74,17 +74,17 @@ export default function Services() {
       <div className="container">
         {/* Header */}
         <div className="max-w-2xl mb-12">
-          <span className="section-label block mb-4">What We Do</span>
+          <span className="section-label block mb-4">What We Build</span>
             <h2
               className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-tight mb-5"
               style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
             >
-              Premium Services
+              Focused Work.
               <br />
-              <span className="gradient-text">Built for Results</span>
+              <span className="gradient-text">Clear Results.</span>
             </h2>
             <p className="text-[oklch(0.50_0.010_264)] text-base leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              We combine strategic design with production-ready development. Every project is custom-built to drive conversions and scale.
+              Web design and development for startups, SaaS teams, and modern businesses that need a sharper online presence.
             </p>
         </div>
 
