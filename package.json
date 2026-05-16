@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "sonner": "latest",
+    "wouter": "latest",
+    "@tailwindcss/vite": "latest",
+    "tailwindcss": "latest",
+    "@builder.io/vite-plugin-jsx-loc": "latest",
+    "vite-plugin-manus-runtime": "latest"
+  },
+  "devDependencies": {}
+}
