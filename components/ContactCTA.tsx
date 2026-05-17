@@ -1,27 +1,34 @@
 export default function ContactCTA() {
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-20 md:py-28">
       <div className="container">
-        <div className="relative overflow-hidden rounded-3xl border border-cyan/20 bg-cyan/10 p-8 md:p-14">
-          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan/20 blur-3xl" />
+        <div className="relative overflow-hidden rounded-sm border border-cyan/20 bg-[oklch(0.09_0.005_264)] p-8 md:p-12 lg:p-16">
+          {/* Glow */}
+          <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-cyan/10 blur-3xl pointer-events-none" />
+          <div className="absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-cyan/5 blur-2xl pointer-events-none" />
 
-          <div className="relative z-10 grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+          <div className="relative z-10 grid gap-10 md:gap-8 md:grid-cols-[1.3fr_0.7fr] md:items-center">
             <div>
               <span className="section-label">Start a project</span>
-              <h2 className="mt-4 text-4xl md:text-6xl">
-                Need a website that feels premium from the first click?
+              <h2
+                className="font-display font-800 text-[oklch(0.94_0.003_264)] leading-tight mt-4 mb-5"
+                style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+              >
+                Need a site that makes the
+                <br className="hidden sm:block" />
+                <span className="gradient-text"> right first impression?</span>
               </h2>
-              <p className="mt-5 max-w-2xl text-lg text-white/60">
-                Tell us what you are building and we will shape the landing page direction, structure, and launch-ready experience.
+              <p className="text-[oklch(0.50_0.010_264)] text-base leading-relaxed max-w-lg" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                Tell us what you're building and we'll shape the direction, structure, and experience — from first concept to live site.
               </p>
             </div>
 
-            <div className="flex flex-col gap-4 md:items-end">
-              <a href="mailto:hello@bezino.agency" className="btn-primary rounded-full px-7 py-4 text-center">
-                Email Bezino
+            <div className="flex flex-col gap-3 md:items-end">
+              <a href="mailto:bezinoagency@gmail.com" className="btn-primary rounded-sm px-7 py-3.5 text-center text-sm">
+                bezinoagency@gmail.com
               </a>
-              <a href="#contact-form" className="btn-outline rounded-full px-7 py-4 text-center">
-                Fill project form
+              <a href="#contact-form" className="btn-outline rounded-sm px-7 py-3.5 text-center text-sm">
+                Share your brief
               </a>
             </div>
           </div>

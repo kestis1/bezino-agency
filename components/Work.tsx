@@ -115,9 +115,10 @@ export default function Work() {
               {/* Main content */}
               <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
                 {/* Image — mobile shows above, desktop shows on hover */}
-                <div className="md:hidden w-full aspect-video rounded-lg overflow-hidden border border-white/[0.08]">
+                <div className="md:hidden w-full aspect-video rounded-sm overflow-hidden border border-white/[0.10]">
                   <div className="relative w-full h-full">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent z-10" />
                     <img
                       src={project.image}
                       alt={project.name}
@@ -145,7 +146,7 @@ export default function Work() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 text-[0.65rem] font-mono-label tracking-wider uppercase border border-white/[0.08] text-[oklch(0.45_0.008_264)] rounded-sm"
+                        className="px-2.5 py-1 text-[0.65rem] font-mono-label tracking-wider uppercase border border-white/[0.08] bg-white/[0.03] text-[oklch(0.50_0.010_264)] rounded-sm group-hover:border-cyan/20 group-hover:text-[oklch(0.55_0.012_264)] transition-colors duration-200"
                       >
                         {tag}
                       </span>
@@ -190,7 +191,7 @@ export default function Work() {
           className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
         >
           <p className="text-[oklch(0.45_0.008_264)] text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Ready to build something that converts?
+            Have a project in mind?
           </p>
           <a
             href="#quote"

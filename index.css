@@ -158,6 +158,13 @@
     min-width: 0;
   }
 
+  @media (min-width: 480px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
   @media (min-width: 640px) {
     .container {
       padding-left: 2rem;

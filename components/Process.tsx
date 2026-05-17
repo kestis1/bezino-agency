@@ -68,7 +68,7 @@ export default function Process() {
           {/* Connecting line — desktop */}
           <div className="hidden lg:block absolute top-[2.75rem] left-[4.5rem] right-[4.5rem] h-px bg-white/[0.06]" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 lg:gap-px">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-0 lg:gap-px">
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
